@@ -1,5 +1,5 @@
-const cities = [353412];
-const apikey = 'l54dxP71pwauzBCp3Gnr1l3V1wJGk622';
+const cities = [353412, 352954, 353981];
+const apikey = 'gHuEn9ghiy20CHSHAJ4ccgWcdU0XWkGS';
 
 Vue.component('weather-day', {
   props: ['day', 'mode'],
@@ -57,18 +57,19 @@ var app = new Vue({
     days: [],
     cities: [
       {value: 353412, name: "Hà Nội"},
-      
+      {value: 352954, name: "Đà Nẵng"},
+      {value: 353981, name: "TP Hồ Chí Minh"},
     ],
     load: true,
   },
   computed: {
     city_name() {
-      let city_names = ['Hà Nội'];
+      let city_names = ['Hà Nội', 'Đà Nẵng', 'TP Hồ Chí Minh'];
       return city_names[cities.indexOf(this.city_key)];
     },
 
     city_image() {
-      let imgs = ['images/hanoi.jpg'];
+      let imgs = ['images/hanoi.jpg','images/danang.jpg','images/tphcm.jpg'];
       return imgs[cities.indexOf(this.city_key)];
     },
 
@@ -123,7 +124,7 @@ var app = new Vue({
   },
   methods: {
     fetch_data() {
-      let url = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/' + this.city_key;
+      let url = 'https://dataservice.accuweather.com/forecasts/v1/daily/5day/' + this.city_key;
       let param = '?language=vi&apikey=' + apikey;
       fetch(url + param)
         .then(res => {
@@ -142,4 +143,3 @@ var app = new Vue({
     },
   },
 })
-
