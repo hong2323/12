@@ -68,7 +68,7 @@ var app = new Vue({
     },
 
     city_image() {
-      let imgs = ['images/hanoi.jpg','images/danang.jpg','images/tphcm.jpg'];
+      let imgs = ['images/hanoi.jpg'];
       return imgs[cities.indexOf(this.city_key)];
     },
 
@@ -123,7 +123,7 @@ var app = new Vue({
   },
   methods: {
     fetch_data() {
-      let url = 'https://dataservice.accuweather.com/forecasts/v1/daily/5day/' + this.city_key;
+      let url = 'https://developer.accuweather.com/accuweather-forecast-api/apis/get/forecasts/v1/daily/5day/%7BlocationKey%7D' + this.city_key;
       let param = '?language=vi&apikey=' + apikey;
       fetch(url + param)
         .then(res => {
