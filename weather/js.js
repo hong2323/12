@@ -1,12 +1,12 @@
 const cities = [353412];
-const apikey = '	l54dxP71pwauzBCp3Gnr1l3V1wJGk622';
+const apikey = 'l54dxP71pwauzBCp3Gnr1l3V1wJGk622';
 
 Vue.component('weather-day', {
   props: ['day', 'mode'],
   computed: {
     weekday() {
       let d = new Date(this.day.Date);
-      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saterday"];
+      let days = ["Sunday", "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturday"];
       return days[d.getDay()];
     },
 
@@ -123,7 +123,7 @@ var app = new Vue({
   },
   methods: {
     fetch_data() {
-      let url = 'https://developer.accuweather.com/accuweather-forecast-api/apis/get/forecasts/v1/daily/5day/%7BlocationKey%7D' + this.city_key;
+      let url = 'http://dataservice.accuweather.com/forecasts/v1/daily/5day/' + this.city_key;
       let param = '?language=vi&apikey=' + apikey;
       fetch(url + param)
         .then(res => {
