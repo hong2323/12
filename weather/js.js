@@ -1,5 +1,5 @@
 const cities = [353412];
-const apikey = 'gHuEn9ghiy20CHSHAJ4ccgWcdU0XWkGS';
+const apikey = '	l54dxP71pwauzBCp3Gnr1l3V1wJGk622';
 
 Vue.component('weather-day', {
   props: ['day', 'mode'],
