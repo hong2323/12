@@ -56,7 +56,6 @@ var app = new Vue({
     city_key: cities[0],
     days: [],
     cities: [
-      {value: 353412, name: "Hà Nội"},
       
     ],
     load: true,
