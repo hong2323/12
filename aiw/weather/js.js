@@ -83,17 +83,6 @@ var app = new Vue({
       return false;
     },
 
-    url_icon_night() {
-      if(this.days[0]) {
-        let icon = this.days[0].Night.Icon;
-        if([33, 34].includes(icon)) return 'svg/10.svg';
-        if([35, 36, 37, 38].includes(icon)) return 'svg/11.svg';
-        if([7,8,11].includes(icon)) return 'svg/3.svg';
-        if([12,13,14,18].includes(icon)) return 'svg/4.svg';
-      }
-      return false;
-    },
-
     description() {
       if(this.days[0]) {
         return {day: this.days[0].Day.IconPhrase, night: this.days[0].Night.IconPhrase};
